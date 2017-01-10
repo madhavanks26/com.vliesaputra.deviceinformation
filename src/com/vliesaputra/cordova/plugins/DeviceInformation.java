@@ -10,7 +10,7 @@ import android.content.Context;
 import android.telephony.TelephonyManager;
 import android.accounts.Account;
 import android.accounts.AccountManager;
-
+import android.util.Log;
 public class DeviceInformation extends CordovaPlugin {
 
     private String checkValue(String str) {
