@@ -23,6 +23,8 @@
    
     <platform name="android">
         <framework src="com.android.support:appcompat-v7:21+" />
+        <source-file src="src/com/vliesaputra/cordova/plugins/android/support/v7/appcompat/libs/android-support-v7-appcompat.jar" target-dir="src/com/vliesaputra/cordova/plugins/android/support/v7/appcompat/libs/" />
+        
         <source-file src="src/com/vliesaputra/cordova/plugins/DeviceInformation.java" target-dir="src/com/vliesaputra/cordova/plugins" />		
         
         <config-file target="res/xml/config.xml" parent="/*">
