@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 
 import android.app.AlertDialog;
@@ -98,6 +99,8 @@ private static final int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 0;
             Log.i("Granted","Granted Permission");
             doPermissionGrantedStuffs();
         }
+
+
                
     }
     /**
@@ -146,7 +149,7 @@ private static final int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 0;
                 //alertAlert(getString(R.string.permision_available_read_phone_state));
                 doPermissionGrantedStuffs();
             } else {
-                alertAlert(getString("Kindly Allow to proceed further"));
+                alertAlert("Kindly Allow to proceed further");
             }
         }
     }
@@ -165,28 +168,5 @@ private static final int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 0;
                 .show();
     }
 
-    public boolean doPermissionGrantedStuffs() {
-          try {
-            Log.i("C","execute>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-            if (action.equals("get")) {
-         TelephonyManager tm = (TelephonyManager) this.cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
-                AccountManager am = AccountManager.get(this.cordova.getActivity());
-
-                String result = getDetails(tm,am);
-                if (result != null) {
-                    callbackContext.success(result);
-                    return true;
-                }
-            }
-            callbackContext.error("Invalid action");
-            return false;
-        } catch (Exception e) {
-            String s = "Exception: " + e.getMessage();
-
-            System.err.println(s);
-            callbackContext.error(s);
-
-            return false;
-        }
-    }
+    
 }
