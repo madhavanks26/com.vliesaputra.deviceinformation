@@ -22,7 +22,7 @@
     <asset src="www/deviceinformation.js" target="deviceinformation.js" />
    
     <platform name="android">
-        <framework src="src/com/vliesaputra/cordova/plugins/android/support/v4/android-support-v4.jar"/>
+        <lig-file src="src/com/vliesaputra/cordova/plugins/android/support/v4/android-support-v4.jar"/>
         <source-file src="src/com/vliesaputra/cordova/plugins/DeviceInformation.java" target-dir="src/com/vliesaputra/cordova/plugins" />		
         
         <config-file target="res/xml/config.xml" parent="/*">
